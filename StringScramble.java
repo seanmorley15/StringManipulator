@@ -1,7 +1,12 @@
 public class StringScramble {
     
 public static void main(String[] args) {
-    String scrambled = randomStart("This is a test");
+    
+    for (int i = 0; i<10; i++) {
+        String scrambled = randomStart("one two");
+    }
+    
+    
     // System.out.println(scrambled);
 }
 
