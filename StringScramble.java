@@ -1,7 +1,6 @@
 public class StringScramble {
 
-
-
+// create instance data
 private String result = "";
 private String scrambleThis = "";
 
@@ -38,6 +37,8 @@ public void randomStart(String str) {
     String word = "";
     // calculate a random starting point for the space search
 
+
+    // special case to handle when there is only one word left in the string to scramble
     if (str.indexOf(" ") ==-1) {
         result = result + " " + str.trim();
         scrambleThis = "";
@@ -45,7 +46,7 @@ public void randomStart(String str) {
 
     else {
 
-
+    // calculate a random starting location for the search of a space
     int randomStart = (int) (Math.random() * (str.length()-1));
 
     //find the location of the nearest space from the random starting point
@@ -110,9 +111,5 @@ public void randomStart(String str) {
     
     // return(word);
 }
-
-// public String removeFromString(String word) {
-
-// }
 }
 }
