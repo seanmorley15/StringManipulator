@@ -1,5 +1,5 @@
 # String Scrambler
-Scrambles a string that the user inputs
+Scrambles a string that the user inputs.
 
 Entrypoint: `StringScrambleRunner.java`
 
