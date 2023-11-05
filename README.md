@@ -1,7 +1,7 @@
 # String Scrambler
 Scrambles a string that the user inputs
 
-Entrypoint: runner
+Entrypoint: `StringScrambleRunner.java`
 
 ### Intended Usage:
 ```java
