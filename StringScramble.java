@@ -19,14 +19,14 @@ public String stringScramble(String str) {
         
         while (scrambleThis.trim().length() > 0) {
             randomStart(scrambleThis);
-            System.out.println(scrambleThis.trim().length());
+            // System.out.println(scrambleThis.trim().length());
         }
         
     
 String returnAns = result;
     
-    System.out.println("ok");
-return(returnAns);
+    // System.out.println("ok");
+return(returnAns.trim());
 
     
 }
@@ -104,9 +104,9 @@ public void randomStart(String str) {
     
     result = result + " " + word.trim();
 
-    System.out.println(result);
+    // System.out.println(result);
 
-    System.out.println(scrambleThis);
+    // System.out.println(scrambleThis);
     
     // return(word);
 }

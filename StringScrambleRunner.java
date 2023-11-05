@@ -1,7 +1,13 @@
+import java.util.Scanner;
+
 public class StringScrambleRunner {
     public static void main(String[] args) {
         StringScramble ss = new StringScramble();
-        String result = ss.stringScramble("one two three four five");
-        System.out.println("The result is " + result);
+        try (Scanner scan = new Scanner(System.in)) {
+            System.out.println("Enter a String to Scramble!");
+            String toScramble = scan.nextLine();
+            String result = ss.stringScramble(toScramble);
+            System.out.println(result);
+        }
     }
 }
