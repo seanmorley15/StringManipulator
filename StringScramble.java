@@ -1,27 +1,51 @@
 public class StringScramble {
 
 
-private String word = "";
+
+private String result = "";
+private String scrambleThis = "";
 
 
 public String stringScramble(String str) {
+    
+    scrambleThis = str;
+
+    // System.out.println(scrambleThis);
+    
     if (str.indexOf(" ")==-1) {
         return ("ERROR: Not enough words provided. Please provide more than one word.");
     }
-    else {
-        String randomWord = randomStart(str);
-        return randomWord;
-    }
+   
+        
+        while (scrambleThis.trim().length() > 0) {
+            randomStart(scrambleThis);
+            System.out.println(scrambleThis.trim().length());
+        }
+        
+    
+String returnAns = result;
+    
+    System.out.println("ok");
+return(returnAns);
 
     
 }
 
 
-public String randomStart(String str) {
+public void randomStart(String str) {
     str = str.trim();
     str = str.replaceAll("\\s+", " "); // remove extra whitespace
-
+    String word = "";
     // calculate a random starting point for the space search
+
+    if (str.indexOf(" ") ==-1) {
+        result = result + " " + str.trim();
+        scrambleThis = "";
+    }
+
+    else {
+
+
     int randomStart = (int) (Math.random() * (str.length()-1));
 
     //find the location of the nearest space from the random starting point
@@ -51,30 +75,44 @@ public String randomStart(String str) {
 
     }
 
+    // create the before and after strings
     String before = "";
     String after = "";
 
-    System.out.println(firstSpace);
-    System.out.println(secondSpace);
+    // DEBUG
+    // System.out.println(firstSpace);
+    // System.out.println(secondSpace);
 
+    // create the substring of before the first space of the word
     before = str.substring(0, firstSpace);
 
+    // CASE - if the word is the last in the string
     if (secondSpace!= -1) {
     after = str.substring(secondSpace); }
-
+    
+    // CASE - if the word is the first in the string
     if (secondSpace<firstSpace && secondSpace!= -1) {
         before = "";
         int starter = str.indexOf(" ");
         after = str.substring(starter);
     }
 
-    System.out.println(before + after);
+    // print result without word
+    // System.out.println(before + after);
 
-    return(word);
+    scrambleThis = (before + after).trim(); // replace str without the word
+    
+    result = result + " " + word.trim();
+
+    System.out.println(result);
+
+    System.out.println(scrambleThis);
+    
+    // return(word);
 }
 
 // public String removeFromString(String word) {
 
 // }
-
+}
 }
