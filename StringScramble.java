@@ -1,31 +1,36 @@
 public class StringScramble {
-    
-public static void main(String[] args) {
-    
-    for (int i = 0; i<10; i++) {
-        String scrambled = randomStart("one two");
-    }
-    
-    
-    // System.out.println(scrambled);
-}
 
-public static String randomStart(String str) {
-    str = str.trim();
 
-    String word = "";
+private String word = "";
+
+
+public String stringScramble(String str) {
     if (str.indexOf(" ")==-1) {
         return ("ERROR: Not enough words provided. Please provide more than one word.");
     }
+    else {
+        String randomWord = randomStart(str);
+        return randomWord;
+    }
 
+    
+}
+
+
+public String randomStart(String str) {
+    str = str.trim();
+    str = str.replaceAll("\\s+", " "); // remove extra whitespace
+
+    // calculate a random starting point for the space search
     int randomStart = (int) (Math.random() * (str.length()-1));
 
-    System.out.println(randomStart);
-
+    //find the location of the nearest space from the random starting point
     int firstSpace = str.indexOf(" ", randomStart);
+    int secondSpace = 0;
 
+    // select the first word if it was closest to it.
     if (randomStart < str.indexOf(" ")) {
-        word = str.substring(0, firstSpace);
+        word = str.substring(0, str.indexOf(" "));
     }
     else {
 
@@ -34,9 +39,8 @@ public static String randomStart(String str) {
             firstSpace = str.indexOf(" ", randomStart - 1);
         }
 
-    System.out.println(firstSpace);
 
-    int secondSpace = str.indexOf(" ", firstSpace + 1);
+    secondSpace = str.indexOf(" ", firstSpace + 1);
 
     if (secondSpace == -1) {
         word = str.substring(firstSpace);
@@ -47,11 +51,30 @@ public static String randomStart(String str) {
 
     }
 
+    String before = "";
+    String after = "";
 
-    System.out.println(word);
-    return(str);
+    System.out.println(firstSpace);
+    System.out.println(secondSpace);
+
+    before = str.substring(0, firstSpace);
+
+    if (secondSpace!= -1) {
+    after = str.substring(secondSpace); }
+
+    if (secondSpace<firstSpace && secondSpace!= -1) {
+        before = "";
+        int starter = str.indexOf(" ");
+        after = str.substring(starter);
+    }
+
+    System.out.println(before + after);
+
+    return(word);
 }
 
-//TODO: include the first word
+// public String removeFromString(String word) {
+
+// }
 
 }
