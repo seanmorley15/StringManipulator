@@ -2,34 +2,28 @@ public class StringReverse {
     
 public String stringReverse(String str) {
 
-    if (str.indexOf(0) == -1) {
+    if (str.indexOf(" ") == -1) {
         return ("ERROR: Not enough words provided. Please provide more than one word.");
     }
 
-    String reversed = "";
-    String wordTemp = "";
-    String before = "";
+    str = str.trim();
+    str = str.replaceAll("\\s+", " "); // remove extra whitespace
+    String word = "";
     String after = "";
+    String result = "";
 
-    int firstSpace = str.indexOf(" ");
+    while (str.length() > 0 && str.indexOf(" ")!=-1) {
+        word = str.substring(0, str.indexOf(" ")).trim();
+        after = str.substring(str.indexOf(" ")).trim();
+        result = word + " " + result;
+        str = after;
 
-    // deal with first word
-    String firstWord = str.substring(0, firstSpace).trim();
-    reversed = reversed + firstWord;
-    after = str.substring(firstSpace);
-    
-    while (str.indexOf(" ") > 0) {
-        int spaceIndex = str.indexOf(" ");
-        int nextSpace = str.indexOf("", spaceIndex+1);
 
-        if (nextSpace != -1) {
 
-        }
-
-        
     }
 
-    return(str);
+
+    return(str.trim() + " " + result);
 }
 
 }
