@@ -6,14 +6,16 @@ public class StringScrambleRunner {
         StringReverse sr = new StringReverse();
         RepeatLetter rl = new RepeatLetter();
 
-        
+        boolean status = true;
 
         try (Scanner scan = new Scanner(System.in)) {
 
             System.out.println("Welcome to the String Playground!\nTo get started, enter a string: ");
 
             String string = scan.nextLine();
-            
+
+            while (status) {
+
             System.out.println("Enter an option number:\n1. String Scramble\n2. String Reverse\n3. Repeat Letter");
             
             String menuSelect = scan.nextLine();
@@ -37,6 +39,9 @@ public class StringScrambleRunner {
                 String result = rl.repeatLetter(string, t);
                 System.out.println(result);
             }
+            }
+
+
     }
 }
 }
