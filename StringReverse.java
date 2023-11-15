@@ -17,12 +17,7 @@ public String stringReverse(String str) {
         after = str.substring(str.indexOf(" ")).trim();
         result = word + " " + result;
         str = after;
-
-
-
     }
-
-
     return(str.trim() + " " + result);
 }
 

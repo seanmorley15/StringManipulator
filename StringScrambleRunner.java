@@ -4,6 +4,7 @@ public class StringScrambleRunner {
     public static void main(String[] args) {
         StringScramble ss = new StringScramble();
         StringReverse sr = new StringReverse();
+        RepeatLetter rl = new RepeatLetter();
 
         
 
@@ -13,7 +14,7 @@ public class StringScrambleRunner {
 
             String string = scan.nextLine();
             
-            System.out.println("Enter an option number:\n1. String Scramble\n2. String Reverse");
+            System.out.println("Enter an option number:\n1. String Scramble\n2. String Reverse\n3. Repeat Letter");
             
             String menuSelect = scan.nextLine();
 
@@ -24,6 +25,16 @@ public class StringScrambleRunner {
             }
             else if (menuSelect.equals("2")) {
                 String result = sr.stringReverse(string);
+                System.out.println(result);
+            }
+            else if (menuSelect.equals("3")) {
+                System.out.println("Enter a letter to repeat");
+                String t = scan.nextLine();
+                while (t.length() > 1) {
+                    System.out.println("Enter one letter only.");
+                    t = scan.nextLine();
+                }
+                String result = rl.repeatLetter(string, t);
                 System.out.println(result);
             }
     }

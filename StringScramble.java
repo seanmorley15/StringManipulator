@@ -30,7 +30,6 @@ return(returnAns.trim());
     
 }
 
-
 public void randomStart(String str) {
     str = str.trim();
     str = str.replaceAll("\\s+", " "); // remove extra whitespace
