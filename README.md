@@ -1,4 +1,4 @@
-# String Scrambler
+# String Manipulator
 Scrambles a string that the user inputs.
 
 Entrypoint: `StringScrambleRunner.java`
