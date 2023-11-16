@@ -16,7 +16,7 @@ public class StringScrambleRunner {
 
             while (status) {
 
-            System.out.println("Enter an option number:\n1. String Scramble\n2. String Reverse\n3. Repeat Letter");
+            System.out.println("Enter an option number:\n1. String Scramble\n2. String Reverse\n3. Repeat Letter\ne. Exit");
             
             String menuSelect = scan.nextLine();
 
@@ -38,6 +38,9 @@ public class StringScrambleRunner {
                 }
                 String result = rl.repeatLetter(string, t);
                 System.out.println(result);
+            }
+            else if (menuSelect.equals("e")) {
+                status = false;
             }
             }
 
