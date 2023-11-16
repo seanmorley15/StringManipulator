@@ -16,6 +16,8 @@ public class ThanksGUI {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
 
+        RepeatLetter rl = new RepeatLetter();
+
         // Set the background color of the frame's content pane
         frame.getContentPane().setBackground(Color.BLUE);
 
@@ -28,8 +30,10 @@ public class ThanksGUI {
 
         // Create a JPanel for text field and submit button
         JPanel inputPanel = new JPanel();
-        JTextField textField = new JTextField(20);
-        inputPanel.add(textField);
+        JTextField stringField = new JTextField(20);
+        inputPanel.add(stringField);
+        JTextField tField = new JTextField(20);
+        inputPanel.add(tField);
 
         JButton submitButton = new JButton("Submit");
         inputPanel.add(submitButton);
@@ -48,10 +52,14 @@ public class ThanksGUI {
             @Override
             public void actionPerformed(ActionEvent e) {
                 // Get the text from the text field
-                String userInput = textField.getText();
+                // String userInput = ;
 
                 // Display thanks message
-                thanksLabel.setText("Thanks for entering: " + userInput);
+                String string = stringField.getText();
+
+                String t = tField.getText();
+                String result = rl.repeatLetter(string, t);
+                thanksLabel.setText(result);
             }
         });
 
